@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.osanchezh.keepnotes</groupId>
+    <artifactId>keepnotes-soa</artifactId>
+    <version>1.0.0.0</version>
+  </parent>
+  <artifactId>keepnotes-soa-app</artifactId>
+  <packaging>war</packaging>
+  <name>keepnotes-soa-app</name>
+  <description>keepnotes-soa-app</description>
+  <version>${keepnotes.version}</version>
+
+
+	<dependencies>
+
+  		<dependency>
+			<groupId>org.osanchezh.keepnotes</groupId>
+			<artifactId>keepnotes-soa-integration</artifactId>
+			<version>${keepnotes.version}</version>
+		</dependency>
+		
+<dependency>
+	<groupId>net.sf.dozer</groupId>
+	<artifactId>dozer</artifactId>
+	<version>${dozer.version}</version>
+</dependency>
+
+		<!-- Spring 3 dependencies -->
+		<dependency> 
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		<exclusions>
+		  <exclusion>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		  </exclusion>
+		</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
