@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 public class KNTUserTO implements Serializable {
 
-    //KNT
-	
 	private static final long serialVersionUID = 3503727830941330198L;
     public int getId() {
 		return id;
