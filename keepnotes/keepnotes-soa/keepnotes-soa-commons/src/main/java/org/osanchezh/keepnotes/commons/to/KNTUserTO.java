@@ -3,7 +3,7 @@ package org.osanchezh.keepnotes.commons.to;
 import java.io.Serializable;
 
 public class KNTUserTO implements Serializable {
-    //a
+    //aa
 	private static final long serialVersionUID = 3503727830941330198L;
     public int getId() {
 		return id;
