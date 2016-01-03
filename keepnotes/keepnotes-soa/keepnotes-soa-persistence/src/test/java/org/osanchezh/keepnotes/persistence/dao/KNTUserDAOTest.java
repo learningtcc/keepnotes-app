@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@ContextConfiguration(locations = {"classpath:spring/keepnotes-soa-persistence/persistence-databaseconfiguration.xml"})
+@ContextConfiguration(locations = {"file:src/main/resources/spring/keepnotes-soa-persistence/keepnotes-dbconfig-persistenceAppCtx.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class KNTUserDAOTest {
 	private static final Logger LOGGER =  LoggerFactory.getLogger(KNTUserDAOTest.class);

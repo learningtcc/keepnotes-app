@@ -5,6 +5,8 @@ import java.util.List;
 import org.osanchezh.keepnotes.model.KNTUserDO;
 import org.osanchezh.keepnotes.persistence.dao.KNTUserDAO;
 import org.osanchezh.keepnotes.persistence.rowmapper.KNTUserRowMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -13,6 +15,9 @@ import org.springframework.stereotype.Repository;
 @Repository("kntuserDAO")
 public class KNTUserDAOImpl implements KNTUserDAO {
 
+	private static final Logger LOGGER =  LoggerFactory.getLogger(KNTUserDAOImpl.class);
+
+	
 	@Autowired
 	@Qualifier("keepNotesUserNamedParameter")
     private NamedParameterJdbcTemplate keepNotesUserNamedParameter;
