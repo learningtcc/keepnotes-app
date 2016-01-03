@@ -2,7 +2,7 @@ package org.osanchezh.keepnotes.commons.exception;
 
 public class KeepNotesDatabaseException  extends Exception {
 
-    private static final long serialVersionUID = 4356630206011251573L;
+    private static final long serialVersionUID  = 4356630206011251573L;
 
 
     public KeepNotesDatabaseException() {
