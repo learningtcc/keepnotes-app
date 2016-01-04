@@ -19,6 +19,14 @@
          <context:annotation-config />
          <context:component-scan base-package="org.osanchezh.keepnotes.services" /> 
          <context:component-scan base-package="org.osanchezh.keepnotes.advices" />
+         <import resource="classpath:/spring/keepnotes-soa-persistence/keepnotes-dbconfig-persistenceAppCtx.xml" />
          
-         
+    <bean id="org.dozer.Mapper" name = "dozerBean" class="org.dozer.spring.DozerBeanMapperFactoryBean">
+        <property name="mappingFiles">
+            <list>
+                <value>classpath:/dozer/dozer-bean-mappings.xml</value>
+            </list>
+        </property>
+    </bean>
+    
 </beans>

@@ -17,7 +17,7 @@ import org.springframework.transaction.CannotCreateTransactionException;
 @Aspect
 @Order(1)
 public class KeepNotesServiceThrowsAdvice {
-	private static final Logger LOGGER =  LoggerFactory.getLogger(LoggingTest.class);
+	private static final Logger LOGGER =  LoggerFactory.getLogger(KeepNotesServiceThrowsAdvice.class);
    
 
     @AfterThrowing(pointcut = "execution(* org.osanchezh.keepnotes..*.*(..))",
