@@ -10,7 +10,31 @@
   <description>keepnotes-soa-commons</description>
   <packaging>jar</packaging>
   <version>${keepnotes.version}</version>
-  
+
+	<developers>
+		<developer>
+			<name>Octavio Sanchez huerta</name>
+			<url>http://zeosaho.blogspot.mx/</url>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+
+	<scm>
+		<developerConnection>scm:git:https://github.com/ohuerta604/keepnotes-app.git</developerConnection>
+	</scm>
+
+
   	<build>
 		<resources>
 			<resource>
