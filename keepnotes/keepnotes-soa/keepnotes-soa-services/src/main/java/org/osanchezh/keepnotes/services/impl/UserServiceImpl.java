@@ -8,7 +8,6 @@ import org.dozer.Mapper;
 import org.dozer.spring.DozerBeanMapperFactoryBean;
 import org.osanchezh.keepnotes.commons.to.KNTUserTO;
 import org.osanchezh.keepnotes.model.KNTUserDO;
-import org.osanchezh.keepnotes.persistence.LoggingTest;
 import org.osanchezh.keepnotes.persistence.dao.KNTUserDAO;
 import org.osanchezh.keepnotes.services.UserService;
 import org.slf4j.Logger;

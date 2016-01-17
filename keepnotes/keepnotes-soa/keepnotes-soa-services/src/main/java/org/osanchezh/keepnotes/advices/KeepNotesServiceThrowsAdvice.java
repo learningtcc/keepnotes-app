@@ -4,7 +4,6 @@ package org.osanchezh.keepnotes.advices;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.osanchezh.keepnotes.commons.exception.KeepNotesDatabaseException;
-import org.osanchezh.keepnotes.persistence.LoggingTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;

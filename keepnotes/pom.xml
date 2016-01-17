@@ -21,9 +21,16 @@
 		<aopalliance.version>1.0</aopalliance.version>
 		<dozer.version>5.3.1</dozer.version>
 		
-		
+		<javax.servlet-api.version>2.5</javax.servlet-api.version>
 
-		<spring.version>3.2.16.RELEASE</spring.version>
+		<spring.version>3.2.13.RELEASE</spring.version>
+		<springsecurity.version>3.2.9.RELEASE</springsecurity.version>
+		<jersey.version>1.18.1</jersey.version>
+		<org.hsqldb.version>2.3.2</org.hsqldb.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<org.hibernate.version>4.3.5.Final</org.hibernate.version>
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<org.eclipse.jetty.jetty-maven-plugin.version>9.1.1.v20140108</org.eclipse.jetty.jetty-maven-plugin.version>
 		<dozer.version>5.3.1</dozer.version>
 	</properties>
 	
