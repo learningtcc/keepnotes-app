@@ -22,9 +22,6 @@ public class KNTUserDAOImpl implements KNTUserDAO {
 	@Qualifier("keepNotesUserNamedParameter")
     private NamedParameterJdbcTemplate keepNotesUserNamedParameter;
 	
-	
-
-
 	public List<KNTUserDO> selectUsers() {
 		return keepNotesUserNamedParameter.query("SELECT ID, NAME, PASSWORD, EMAIL FROM KNC_USER", new KNTUserRowMapper());
 		

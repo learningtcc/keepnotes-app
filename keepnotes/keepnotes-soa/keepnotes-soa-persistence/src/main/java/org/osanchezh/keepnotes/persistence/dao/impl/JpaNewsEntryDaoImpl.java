@@ -17,10 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
  * 
  * @author Philip W. Sorst <philip@sorst.net>
  */
-public class JpaNewsEntryDao extends JpaDao<NewsEntry, Long> implements NewsEntryDao
+public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDao
 {
 
-	public JpaNewsEntryDao()
+	public JpaNewsEntryDaoImpl()
 	{
 		super(NewsEntry.class);
 	}
