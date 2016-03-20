@@ -1,4 +1,4 @@
-package org.osanchezh.keepnotes.persistence.dao.impl;
+package org.osanchezh.keepnotes.persistence.dao.impl.user;
 
 import java.util.List;
 
@@ -12,6 +12,8 @@ import javax.persistence.criteria.Root;
 
 
 
+
+
 import org.osanchezh.keepnotes.persistence.dao.JpaDao;
 import org.osanchezh.keepnotes.soa.model.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,10 +21,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 
 
-public class JpaUserDao extends JpaDao<User, Long> implements UserDao
+public class JpaUserDaoImpl extends JpaDao<User, Long> implements UserDaoImpl
 {
 
-	public JpaUserDao()
+	public JpaUserDaoImpl()
 	{
 		super(User.class);
 	}

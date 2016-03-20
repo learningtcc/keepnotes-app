@@ -1,4 +1,4 @@
-package org.osanchezh.keepnotes.persistence.dao.impl;
+package org.osanchezh.keepnotes.persistence.dao.impl.newsentry;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * JPA Implementation of a {@link NewsEntryDao}.
+ * JPA Implementation of a {@link NewsEntryDaoImpl}.
  * 
  * @author Philip W. Sorst <philip@sorst.net>
  */
-public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDao
+public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDaoImpl
 {
 
 	public JpaNewsEntryDaoImpl()

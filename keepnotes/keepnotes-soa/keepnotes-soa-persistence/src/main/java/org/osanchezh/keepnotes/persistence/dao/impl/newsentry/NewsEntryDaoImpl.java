@@ -1,4 +1,4 @@
-package org.osanchezh.keepnotes.persistence.dao.impl;
+package org.osanchezh.keepnotes.persistence.dao.impl.newsentry;
 
 import org.osanchezh.keepnotes.persistence.dao.Dao;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
@@ -9,7 +9,7 @@ import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
  * 
  * @author Philip W. Sorst <philip@sorst.net>
  */
-public interface NewsEntryDao extends Dao<NewsEntry, Long>
+public interface NewsEntryDaoImpl extends Dao<NewsEntry, Long>
 {
 
 }
