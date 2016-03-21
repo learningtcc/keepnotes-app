@@ -307,6 +307,13 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${org.eclipse.jetty.jetty-maven-plugin.version}</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webApp>
+			      		<contextPath>/keepnotes-web</contextPath>
+			 		</webApp>
+			 		<jettyXml>jetty.xml</jettyXml>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
