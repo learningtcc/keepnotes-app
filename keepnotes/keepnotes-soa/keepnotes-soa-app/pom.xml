@@ -10,11 +10,7 @@
   <name>keepnotes-soa-app</name>
   <description>keepnotes-soa-app</description>
   <version>${keepnotes.version}</version>
-
-
-
-	
-	
+  
 	<developers>
 		<developer>
 			<name>Octavio Sanchez huerta</name>
