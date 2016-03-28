@@ -2,7 +2,7 @@ package org.osanchezh.keepnotes.persistence.dao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDaoImpl;
+import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class JpaUserDaoTest {
 	private static final Logger LOGGER =  LoggerFactory.getLogger(KNTUserDAOTest.class);
 
 	@Autowired
-	private NewsEntryDaoImpl NewsEntryDao;
+	private NewsEntryDao NewsEntryDao;
 
     @Test
     public void testkntuserDAO() {
@@ -25,11 +25,11 @@ public class JpaUserDaoTest {
       LOGGER.debug("TEST");
     }
 	
-	public NewsEntryDaoImpl getNewsEntryDao() {
+	public NewsEntryDao getNewsEntryDao() {
 		return NewsEntryDao;
 	}
 
-	public void setNewsEntryDao(NewsEntryDaoImpl newsEntryDao) {
+	public void setNewsEntryDao(NewsEntryDao newsEntryDao) {
 		NewsEntryDao = newsEntryDao;
 	}
 

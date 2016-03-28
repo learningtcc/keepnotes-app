@@ -21,7 +21,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 
 
-public class JpaUserDaoImpl extends JpaDao<User, Long> implements UserDaoImpl
+public class JpaUserDaoImpl extends JpaDao<User, Long> implements UserDao
 {
 
 	public JpaUserDaoImpl()

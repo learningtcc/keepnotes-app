@@ -14,12 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 /**
- * JPA Implementation of a {@link NewsEntryDaoImpl}.
+ * JPA Implementation of a {@link NewsEntryDao}.
  * 
  * @author Philip W. Sorst <philip@sorst.net>
  */
 @Repository("jpaNewsEntryDao")
-public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDaoImpl
+public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDao
 {
 
 	public JpaNewsEntryDaoImpl()

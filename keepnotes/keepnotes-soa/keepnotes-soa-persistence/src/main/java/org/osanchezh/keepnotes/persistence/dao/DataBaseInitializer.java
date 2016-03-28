@@ -8,7 +8,7 @@ import java.util.Date;
 
 
 
-import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDaoImpl;
+import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
 import org.osanchezh.keepnotes.soa.model.entity.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,7 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class DataBaseInitializer
 {
 
-	private NewsEntryDaoImpl newsEntryDao;
+	private NewsEntryDao newsEntryDao;
 
 	private UserDao userDao;
 
@@ -35,7 +35,7 @@ public class DataBaseInitializer
 	}
 
 
-	public DataBaseInitializer(UserDao userDao, NewsEntryDaoImpl newsEntryDao, PasswordEncoder passwordEncoder)
+	public DataBaseInitializer(UserDao userDao, NewsEntryDao newsEntryDao, PasswordEncoder passwordEncoder)
 	{
 		this.userDao = userDao;
 		this.newsEntryDao = newsEntryDao;

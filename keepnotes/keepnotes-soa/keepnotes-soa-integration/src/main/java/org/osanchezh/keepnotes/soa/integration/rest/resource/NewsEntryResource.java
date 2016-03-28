@@ -18,7 +18,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
 import org.osanchezh.keepnotes.commons.json.JsonViews;
-import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDaoImpl;
+import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +38,7 @@ public class NewsEntryResource
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private NewsEntryDaoImpl newsEntryDao;
+	private NewsEntryDao newsEntryDao;
 
 	@Autowired
 	private ObjectMapper mapper;
