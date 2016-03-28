@@ -9,6 +9,7 @@ import javax.persistence.criteria.Root;
 
 import org.osanchezh.keepnotes.persistence.dao.JpaDao;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
  * 
  * @author Philip W. Sorst <philip@sorst.net>
  */
+@Repository("jpaNewsEntryDao")
 public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDaoImpl
 {
 
