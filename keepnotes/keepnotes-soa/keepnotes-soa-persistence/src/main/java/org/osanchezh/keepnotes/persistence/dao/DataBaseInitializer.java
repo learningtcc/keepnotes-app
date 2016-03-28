@@ -8,7 +8,9 @@ import java.util.Date;
 
 
 
+
 import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
+import org.osanchezh.keepnotes.persistence.dao.impl.user.UserDao;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
 import org.osanchezh.keepnotes.soa.model.entity.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
