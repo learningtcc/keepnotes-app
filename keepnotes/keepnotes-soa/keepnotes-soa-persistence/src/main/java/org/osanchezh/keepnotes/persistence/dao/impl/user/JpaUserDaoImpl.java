@@ -14,13 +14,15 @@ import javax.persistence.criteria.Root;
 
 
 
+
 import org.osanchezh.keepnotes.persistence.dao.JpaDao;
 import org.osanchezh.keepnotes.soa.model.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
+@Repository("jpaUserDao")
 public class JpaUserDaoImpl extends JpaDao<User, Long> implements UserDao
 {
 

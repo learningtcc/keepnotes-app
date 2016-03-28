@@ -42,13 +42,13 @@
 	<bean id="keepnoteshtransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="keepnoteshEntityManagerFactory" />
 	</bean>
-	
+	<!-- 
 	<bean id="newsEntryDao" class="org.osanchezh.keepnotes.persistence.dao.impl.newsentry.JpaNewsEntryDaoImpl">
 	</bean>
 	
 	<bean id="userDao" class="org.osanchezh.keepnotes.persistence.dao.impl.user.JpaUserDaoImpl">
 	</bean>
-	
+	 -->
 	<jdbc:embedded-database id="keepNotesUserDataSource" type="H2">
 		<jdbc:script location="classpath:database/sql/KN_CREATETABLES.sql" />
 		<jdbc:script location="classpath:database/sql/KN_INSERTTABLES.sql" />

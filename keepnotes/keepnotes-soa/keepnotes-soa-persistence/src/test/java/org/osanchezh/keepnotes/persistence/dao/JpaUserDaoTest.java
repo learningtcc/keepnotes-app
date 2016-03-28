@@ -6,6 +6,7 @@ import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -15,22 +16,24 @@ public class JpaUserDaoTest {
 	private static final Logger LOGGER =  LoggerFactory.getLogger(KNTUserDAOTest.class);
 
 	@Autowired
-	private NewsEntryDao NewsEntryDao;
+	@Qualifier("jpaNewsEntryDao")
+	private NewsEntryDao jpaNewsEntryDao;
 
-    @Test
+
+	@Test
     public void testkntuserDAO() {
       LOGGER.info("INFO");
-      int resultado = NewsEntryDao.findAll().size();
+      int resultado = jpaNewsEntryDao.findAll().size();
+     
       LOGGER.debug("RESULTADO="+resultado);
       LOGGER.debug("TEST");
     }
-	
-	public NewsEntryDao getNewsEntryDao() {
-		return NewsEntryDao;
-	}
 
-	public void setNewsEntryDao(NewsEntryDao newsEntryDao) {
-		NewsEntryDao = newsEntryDao;
-	}
+	public NewsEntryDao getJpaNewsEntryDao() {
+			return jpaNewsEntryDao;
+		}
 
+	public void setJpaNewsEntryDao(NewsEntryDao jpaNewsEntryDao) {
+			this.jpaNewsEntryDao = jpaNewsEntryDao;
+		}
 }
