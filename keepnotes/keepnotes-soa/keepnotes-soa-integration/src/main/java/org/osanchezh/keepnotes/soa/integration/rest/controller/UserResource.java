@@ -1,4 +1,4 @@
-package org.osanchezh.keepnotes.soa.integration.rest.resource;
+package org.osanchezh.keepnotes.soa.integration.rest.controller;
 
 import java.util.HashMap;
 import java.util.Map;

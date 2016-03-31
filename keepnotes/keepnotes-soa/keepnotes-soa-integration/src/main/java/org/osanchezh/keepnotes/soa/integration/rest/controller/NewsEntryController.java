@@ -1,4 +1,4 @@
-package org.osanchezh.keepnotes.soa.integration.rest.resource;
+package org.osanchezh.keepnotes.soa.integration.rest.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,10 +19,12 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
 import org.osanchezh.keepnotes.commons.json.JsonViews;
 import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
+import org.osanchezh.keepnotes.services.NewsEntryService;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,13 +34,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Path("/news")
-public class NewsEntryResource
+public class NewsEntryController
 {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private NewsEntryDao newsEntryDao;
+	@Qualifier("newsEntryService")
+	private NewsEntryService newsEntryService;
 
 	@Autowired
 	private ObjectMapper mapper;
@@ -56,7 +59,7 @@ public class NewsEntryResource
 		} else {
 			viewWriter = this.mapper.writerWithView(JsonViews.User.class);
 		}
-		List<NewsEntry> allEntries = this.newsEntryDao.findAll();
+		List<NewsEntry> allEntries = this.newsEntryService.list();
 
 		return viewWriter.writeValueAsString(allEntries);
 	}
@@ -69,7 +72,7 @@ public class NewsEntryResource
 	{
 		this.logger.info("read(id)");
 
-		NewsEntry newsEntry = this.newsEntryDao.find(id);
+		NewsEntry newsEntry = this.newsEntryService.read(id);
 		if (newsEntry == null) {
 			throw new WebApplicationException(404);
 		}
@@ -84,7 +87,7 @@ public class NewsEntryResource
 	{
 		this.logger.info("create(): " + newsEntry);
 
-		return this.newsEntryDao.save(newsEntry);
+		return this.newsEntryService.create(newsEntry);
 	}
 
 
@@ -96,7 +99,7 @@ public class NewsEntryResource
 	{
 		this.logger.info("update(): " + newsEntry);
 
-		return this.newsEntryDao.save(newsEntry);
+		return this.newsEntryService.create(newsEntry);
 	}
 
 
@@ -107,7 +110,7 @@ public class NewsEntryResource
 	{
 		this.logger.info("delete(id)");
 
-		this.newsEntryDao.delete(id);
+		this.newsEntryService.delete(id);
 	}
 
 

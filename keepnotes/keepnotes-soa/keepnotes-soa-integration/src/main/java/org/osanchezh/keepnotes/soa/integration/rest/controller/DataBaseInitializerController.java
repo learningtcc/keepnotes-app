@@ -1,4 +1,4 @@
-package org.osanchezh.keepnotes.persistence.dao;
+package org.osanchezh.keepnotes.soa.integration.rest.controller;
 
 import java.util.Date;
 
@@ -21,7 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * 
  * @author Philip W. Sorst <philip@sorst.net>
  */
-public class DataBaseInitializer
+public class DataBaseInitializerController
 {
 
 	private NewsEntryDao newsEntryDao;
@@ -31,13 +31,13 @@ public class DataBaseInitializer
 	private PasswordEncoder passwordEncoder;
 
 
-	protected DataBaseInitializer()
+	protected DataBaseInitializerController()
 	{
 		/* Default constructor for reflection instantiation */
 	}
 
 
-	public DataBaseInitializer(UserDao userDao, NewsEntryDao newsEntryDao, PasswordEncoder passwordEncoder)
+	public DataBaseInitializerController(UserDao userDao, NewsEntryDao newsEntryDao, PasswordEncoder passwordEncoder)
 	{
 		this.userDao = userDao;
 		this.newsEntryDao = newsEntryDao;
