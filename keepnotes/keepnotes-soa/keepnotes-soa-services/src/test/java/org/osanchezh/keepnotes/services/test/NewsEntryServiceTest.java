@@ -22,6 +22,7 @@ public class NewsEntryServiceTest {
 	@Test
 	public void testNewsEntryService(){
 		LOGGER.debug("test");
+		LOGGER.debug("LOAD:"+newsEntryService.list().size());
 	}
 	public NewsEntryService getNewsEntryService() {
 		return newsEntryService;

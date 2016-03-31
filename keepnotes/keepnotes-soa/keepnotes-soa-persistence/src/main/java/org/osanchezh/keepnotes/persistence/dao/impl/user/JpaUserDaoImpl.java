@@ -31,9 +31,7 @@ public class JpaUserDaoImpl extends JpaDao<User, Long> implements UserDao
 		super(User.class);
 	}
 
-
-
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
 	{
 		User user = this.findByName(username);
@@ -46,7 +44,7 @@ public class JpaUserDaoImpl extends JpaDao<User, Long> implements UserDao
 
 
 
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public User findByName(String name)
 	{
 		final CriteriaBuilder builder = this.getEntityManager().getCriteriaBuilder();

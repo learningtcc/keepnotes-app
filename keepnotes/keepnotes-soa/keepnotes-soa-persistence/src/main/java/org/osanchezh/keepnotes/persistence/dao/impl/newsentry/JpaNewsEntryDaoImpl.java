@@ -29,7 +29,7 @@ public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements News
 
 
 	@Override
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public List<NewsEntry> findAll()
 	{
 		final CriteriaBuilder builder = this.getEntityManager().getCriteriaBuilder();
