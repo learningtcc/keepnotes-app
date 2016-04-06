@@ -20,7 +20,11 @@
          <context:component-scan base-package="org.osanchezh.keepnotes.services" /> 
          <context:component-scan base-package="org.osanchezh.keepnotes.advices" />
          <import resource="classpath:/spring/keepnotes-soa-persistence/keepnotes-dbconfig-persistenceAppCtx.xml" />
-         
+
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+		<constructor-arg value="ThisIsASecretSoChangeMe" />
+	</bean>
+	
     <bean id="org.dozer.Mapper" name = "dozerBean" class="org.dozer.spring.DozerBeanMapperFactoryBean">
         <property name="mappingFiles">
             <list>

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ws.rs.WebApplicationException;
 
 import org.osanchezh.keepnotes.commons.exception.KeepNotesDatabaseException;
-import org.osanchezh.keepnotes.persistence.dao.JpaNewsEntryDaoTest;
 import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
 import org.osanchezh.keepnotes.services.NewsEntryService;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;

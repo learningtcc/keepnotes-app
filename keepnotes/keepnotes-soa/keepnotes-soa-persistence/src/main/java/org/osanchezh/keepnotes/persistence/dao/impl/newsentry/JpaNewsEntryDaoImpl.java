@@ -6,9 +6,10 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
 import org.osanchezh.keepnotes.persistence.dao.JpaDao;
 import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository("jpaNewsEntryDao")
 public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements NewsEntryDao
 {
+	private static final Logger LOGGER =  LoggerFactory.getLogger(JpaNewsEntryDaoImpl.class);
 
 	public JpaNewsEntryDaoImpl()
 	{
@@ -29,7 +31,7 @@ public class JpaNewsEntryDaoImpl extends JpaDao<NewsEntry, Long> implements News
 
 
 	@Override
-	//@Transactional(readOnly = true)
+	@Transactional(readOnly = true)
 	public List<NewsEntry> findAll()
 	{
 		final CriteriaBuilder builder = this.getEntityManager().getCriteriaBuilder();

@@ -8,12 +8,17 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.JpaNewsEntryDaoImpl;
 import org.osanchezh.keepnotes.soa.model.entity.Entity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 
 public class JpaDao<T extends Entity, I> implements Dao<T, I>
 {
+	private static final Logger LOGGER =  LoggerFactory.getLogger(JpaDao.class);
+
 
 	private EntityManager entityManager;
 
@@ -65,7 +70,11 @@ public class JpaDao<T extends Entity, I> implements Dao<T, I>
 	@Transactional
 	public T save(T entity)
 	{
-		return this.getEntityManager().merge(entity);
+		LOGGER.debug("OBJETO.GUARDADO....");
+		T mobjeto= this.getEntityManager().merge(entity);
+
+		return mobjeto;
+		
 	}
 
 

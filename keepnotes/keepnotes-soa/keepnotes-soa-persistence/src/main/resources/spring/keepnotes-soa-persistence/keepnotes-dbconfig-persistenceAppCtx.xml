@@ -42,6 +42,10 @@
 	<bean id="keepnoteshtransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="keepnoteshEntityManagerFactory" />
 	</bean>
+	
+  <tx:annotation-driven  order="100" transaction-manager="keepnoteshtransactionManager"/>
+
+
 	<!-- 
 	<bean id="newsEntryDao" class="org.osanchezh.keepnotes.persistence.dao.impl.newsentry.JpaNewsEntryDaoImpl">
 	</bean>
@@ -91,6 +95,5 @@
  <aop:advisor advice-ref="keepNotesUserTxAdvice" pointcut-ref="keepNotesUserTxPointcut" />
  </aop:config>
  
-        <tx:annotation-driven  order="100" transaction-manager="keepNotesUserTransactionManager"/>
     
 </beans>

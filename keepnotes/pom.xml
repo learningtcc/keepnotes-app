@@ -19,7 +19,6 @@
 		<dbh2.version>1.4.187</dbh2.version>
 		<junit.version>4.8.1</junit.version>
 		<aopalliance.version>1.0</aopalliance.version>
-		<dozer.version>5.3.1</dozer.version>
 		
 		<javax.servlet-api.version>2.5</javax.servlet-api.version>
 
@@ -32,6 +31,33 @@
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<org.eclipse.jetty.jetty-maven-plugin.version>9.1.1.v20140108</org.eclipse.jetty.jetty-maven-plugin.version>
 		<dozer.version>5.3.1</dozer.version>
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		<java.version>1.6</java.version>
+		<project.encoding>UTF-8</project.encoding>
+		<resources-plugin.version>2.4.3</resources-plugin.version>
 	</properties>
 	
+	
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

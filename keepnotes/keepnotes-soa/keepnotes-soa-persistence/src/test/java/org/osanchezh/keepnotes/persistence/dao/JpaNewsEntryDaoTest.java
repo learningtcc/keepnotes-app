@@ -1,8 +1,11 @@
 package org.osanchezh.keepnotes.persistence.dao;
 
+import java.util.Date;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.osanchezh.keepnotes.persistence.dao.impl.newsentry.NewsEntryDao;
+import org.osanchezh.keepnotes.soa.model.entity.NewsEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,18 @@ public class JpaNewsEntryDaoTest {
 	@Test
     public void testkntuserDAO() {
       LOGGER.info("INFO");
+	  
+      long timestamp = System.currentTimeMillis() - 1000 * 60 * 60 * 24;
+
+      for (int i = 0; i < 10; i++) {
+			NewsEntry newsEntry = new NewsEntry();
+			newsEntry.setContent("This is example content " + i);
+			newsEntry.setDate(new Date(timestamp));
+			this.jpaNewsEntryDao.save(newsEntry);
+			timestamp += 1000 * 60 * 60;
+			LOGGER.debug("--tiempo.insersion="+timestamp);
+			
+		}
       int resultado = jpaNewsEntryDao.findAll().size();
      
       LOGGER.debug("RESULTADO="+resultado);

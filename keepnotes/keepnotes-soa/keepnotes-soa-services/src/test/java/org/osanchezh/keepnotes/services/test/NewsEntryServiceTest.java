@@ -24,6 +24,7 @@ public class NewsEntryServiceTest {
 		LOGGER.debug("test");
 		LOGGER.debug("LOAD:"+newsEntryService.list().size());
 	}
+	
 	public NewsEntryService getNewsEntryService() {
 		return newsEntryService;
 	}
