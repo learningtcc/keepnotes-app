@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -17,7 +18,8 @@
         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
          <context:annotation-config />
-         <context:component-scan base-package="org.osanchezh.keepnotes.integration" /> 
+         <context:component-scan base-package="org.osanchezh.keepnotes.soa.integration.rest.controller" /> 
          <import resource="classpath:/spring/keepnotes-soa-services/keepnotes-servicesAppCtx.xml" />
+         <bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
          
 </beans>
