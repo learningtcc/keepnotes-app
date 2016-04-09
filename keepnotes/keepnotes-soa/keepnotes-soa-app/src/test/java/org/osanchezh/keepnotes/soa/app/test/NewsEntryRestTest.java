@@ -1,5 +1,6 @@
 package org.osanchezh.keepnotes.soa.app.test;
 
+import java.net.ConnectException;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -13,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 //@RunWith(SpringJUnit4ClassRunner.class)
@@ -28,7 +30,12 @@ public class NewsEntryRestTest {
 	    //headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 	    //HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 	    //ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.GET, entity, String.class);
-	    String cadena = restTemplate.getForObject(URL, String.class);
+	    try{
+	    String cadena ="";
+	    cadena = restTemplate.getForObject(URL, String.class);
 	    LOGGER.debug("cadena.json="+cadena);
+	    }catch(ResourceAccessException ex){
+	    	LOGGER.error(ex.getMessage(),ex);
+	    }
 	}
 }

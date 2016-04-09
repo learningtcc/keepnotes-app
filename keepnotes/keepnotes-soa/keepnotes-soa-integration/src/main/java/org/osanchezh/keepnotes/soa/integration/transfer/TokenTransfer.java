@@ -3,13 +3,15 @@ package org.osanchezh.keepnotes.soa.integration.transfer;
 public class TokenTransfer
 {
 
-	private final String token;
+	private String token;
 
 
-	public TokenTransfer(String token)
-	{
+	public void setToken(String token) {
 		this.token = token;
 	}
+
+
+
 
 
 	public String getToken()

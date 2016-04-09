@@ -35,18 +35,18 @@ public class UserEntryController
 	private static final Logger LOGGER =  LoggerFactory.getLogger(UserEntryController.class);
 	@Autowired
 	private UserDetailsService userService;
-/*
+
 	@Autowired
 	@Qualifier("authenticationManager")
 	private AuthenticationManager authManager;
-*/
+
 
 	/**
 	 * Retrieves the currently logged in user.
 	 * 
 	 * @return A transfer containing the username and the roles.
 	 */
-	/*
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public UserTransfer getUser()
@@ -61,7 +61,7 @@ public class UserEntryController
 
 		return new UserTransfer(userDetails.getUsername(), this.createRoleMap(userDetails));
 	}
-*/
+
 
 	/**
 	 * Authenticates a user and creates an authentication token.
@@ -73,7 +73,7 @@ public class UserEntryController
 	 * @return A transfer containing the authentication token.
 	 */
 	
-	/*@Path("authenticate")
+	@Path("authenticate")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	public TokenTransfer authenticate(@FormParam("username") String username, @FormParam("password") String password)
@@ -82,14 +82,15 @@ public class UserEntryController
 				new UsernamePasswordAuthenticationToken(username, password);
 		Authentication authentication = this.authManager.authenticate(authenticationToken);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
-*/
+
 		/*
 		 * Reload user as password of authentication principal will be null after authorization and
 		 * password is needed for token generation
 		 */
-/*		UserDetails userDetails = this.userService.loadUserByUsername(username);
-
-		return new TokenTransfer(TokenUtils.createToken(userDetails));
+		UserDetails userDetails = this.userService.loadUserByUsername(username);
+		TokenTransfer tokenTransfer= new TokenTransfer();
+		tokenTransfer.setToken(TokenUtils.createToken(userDetails));
+		return tokenTransfer;
 	}
 
 
@@ -102,5 +103,5 @@ public class UserEntryController
 
 		return roles;
 	}
-*/
+
 }
