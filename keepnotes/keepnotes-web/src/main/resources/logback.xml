@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<property name="LOG_HOME" value="/home/zeo/logs" />
+	<property name="LOG_HOME" value="/Users/octaviosanchez/logstore" />
 	<property name="MODULE_NAME" value="keepnotes-soa-web" />
 	<property name="PACKAGE_NAME" value="net.dontdrinkandroot.example" />
 
