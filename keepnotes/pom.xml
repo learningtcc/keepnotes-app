@@ -34,6 +34,7 @@
 		<project.encoding>UTF-8</project.encoding>
 		<resources-plugin.version>2.4.3</resources-plugin.version>
 		<loghome.location>/Users/octaviosanchez/logstore</loghome.location>
+		
 	</properties>
 	
 	
