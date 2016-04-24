@@ -13,7 +13,9 @@
 			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 			http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
-
+<!-- 
+not used 24062016
+ -->
 	<context:annotation-config />
 
 	<!--
