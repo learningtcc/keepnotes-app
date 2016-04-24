@@ -48,5 +48,14 @@
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <filter>
+        <filter-name>cors</filter-name>
+        <filter-class>org.osanchezh.keepnotes.soa.integration.filter.CORSFilter</filter-class> <!-- your package name and filter class -->
+    </filter>
+    <filter-mapping>
+        <filter-name>cors</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
     
 </web-app>

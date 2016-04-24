@@ -78,6 +78,9 @@ public class UserEntryController
 	@Produces(MediaType.APPLICATION_JSON)
 	public TokenTransfer authenticate(@FormParam("username") String username, @FormParam("password") String password)
 	{
+		LOGGER.debug("mensaje.username="+username);
+		LOGGER.debug("mensaje.password="+username);
+
 		UsernamePasswordAuthenticationToken authenticationToken =
 				new UsernamePasswordAuthenticationToken(username, password);
 		Authentication authentication = this.authManager.authenticate(authenticationToken);

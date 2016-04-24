@@ -21,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 public class NewsEntryRestTest {
    public static final String URL = "http://localhost:8081/keepnotes-soa-app/rest/news";
 	private static final Logger LOGGER =  LoggerFactory.getLogger(NewsEntryRestTest.class);
+ 
 
 	@Test
 	public void testGetRestService(){

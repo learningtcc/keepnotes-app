@@ -51,15 +51,23 @@ angular.module('exampleApp', ['ngRoute', 'ngCookies', 'exampleApp.services'])
 		    $httpProvider.interceptors.push(function ($q, $rootScope, $location) {
 		        return {
 		        	'request': function(config) {
-		        		var isRestCall = config.url.indexOf('rest') == 0;
+		        		console.log('request.0.x');
+		        		var isRestCall = config.url.indexOf('rest') >= 0;
+		        		console.log('isRestCall',isRestCall);
+		        		console.log('config.x',config.url);
+		        		//isRestCall=true;
 		        		if (isRestCall && angular.isDefined($rootScope.authToken)) {
+		        			console.log('request.1');
 		        			var authToken = $rootScope.authToken;
 		        			if (exampleAppConfig.useAuthTokenHeader) {
+		        				console.log('request.1.1');
 		        				config.headers['X-Auth-Token'] = authToken;
 		        			} else {
+		        				console.log('request.1.2');
 		        				config.url = config.url + "?token=" + authToken;
 		        			}
 		        		}
+		        		console.log('request.2');
 		        		return config || $q.when(config);
 		        	}
 		        };
@@ -153,7 +161,10 @@ function LoginController($scope, $rootScope, $location, $cookieStore, UserServic
 	
 	$scope.login = function() {
 		UserService.authenticate($.param({username: $scope.username, password: $scope.password}), function(authenticationResult) {
+			console.log('auth',authenticationResult);
 			var authToken = authenticationResult.token;
+			console.log('auth.authToken',authToken);
+
 			$rootScope.authToken = authToken;
 			if ($scope.rememberMe) {
 				$cookieStore.put('authToken', authToken);
@@ -171,7 +182,7 @@ var services = angular.module('exampleApp.services', ['ngResource']);
 
 services.factory('UserService', function($resource) {
 	
-	return $resource('rest/user/:action', {},
+	return $resource('http://localhost:8081/keepnotes-soa-app/rest/user/:action', {},
 			{
 				authenticate: {
 					method: 'POST',
@@ -184,5 +195,5 @@ services.factory('UserService', function($resource) {
 
 services.factory('NewsService', function($resource) {
 	
-	return $resource('rest/news/:id', {id: '@id'});
+	return $resource('http://localhost:8081/keepnotes-soa-app/rest/news/:id', {id: '@id'});
 });
