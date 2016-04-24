@@ -51,11 +51,11 @@ public class NewsEntryController
 	@Produces(MediaType.APPLICATION_JSON)
 	public String list() throws JsonGenerationException, JsonMappingException, IOException
 	{
-		this.logger.info("list()");
+		this.logger.info("list()1-");
 
 		ObjectWriter viewWriter;
-		//if (this.isAdmin()) {
-		if (true) {
+		if (this.isAdmin()) {
+		//if (true) {
 			viewWriter = this.mapper.writerWithView(JsonViews.Admin.class);
 		} else {
 			viewWriter = this.mapper.writerWithView(JsonViews.User.class);

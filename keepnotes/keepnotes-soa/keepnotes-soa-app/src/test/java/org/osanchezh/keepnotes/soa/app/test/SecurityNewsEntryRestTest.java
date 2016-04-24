@@ -27,6 +27,48 @@ public class SecurityNewsEntryRestTest {
 
 		private static final Logger LOGGER =  LoggerFactory.getLogger(SecurityNewsEntryRestTest.class);
 		
+		
+		@Test
+		public void testLoginRestService(){
+			try{
+			    RestTemplate restTemplate = new RestTemplate();
+
+				MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+				map.add("username", "admin");
+				map.add("password", "admin");  
+
+				HttpHeaders headers = new HttpHeaders();
+				headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);      
+
+				HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
+
+				List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+				messageConverters.add(new MappingJacksonHttpMessageConverter());    
+				messageConverters.add(new FormHttpMessageConverter());
+				restTemplate.setMessageConverters(messageConverters);
+
+				TokenTransfer tokenTransfer = restTemplate.postForObject(URL_SECURITY, request, TokenTransfer.class);
+				String token1=tokenTransfer.getToken();
+				LOGGER.debug("token="+token1);
+
+				RestTemplate restTemplate1 = new RestTemplate();
+
+			    
+			    HttpHeaders headers1= new HttpHeaders();
+			    headers1.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+			    headers1.add("X-Auth-Token", token1);
+			    
+			   
+			    HttpEntity<String> entity1 = new HttpEntity<String>("request", headers1);
+			    ResponseEntity<String> result1 = restTemplate1.exchange(URL, HttpMethod.GET, entity1 ,String.class);
+			    
+			    LOGGER.debug("RESULTADO="+result1.getBody());
+			    
+				}catch(ResourceAccessException ex){
+					LOGGER.error(ex.getMessage(),ex);
+				}
+			
+		}
 		//@Test
 		public void testGetRestService(){
 			try{
@@ -68,7 +110,7 @@ public class SecurityNewsEntryRestTest {
 		
 		
 
-		@Test
+		//@Test
 		public void testGetRestService2(){
 			try{
 		    RestTemplate restTemplate = new RestTemplate();
@@ -76,7 +118,9 @@ public class SecurityNewsEntryRestTest {
 		    
 		    HttpHeaders headers = new HttpHeaders();
 		    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-		    headers.add("X-Auth-Token", "admin:1460164887842:17de642b86d939f238e7e0d6e168bcf6");
+		    headers.add("X-Auth-Token", "user:1461466423029:dce73150343b033e2c56fab50c7a25db");
+		    
+		   
 		    HttpEntity<String> entity = new HttpEntity<String>("request", headers);
 		    ResponseEntity<String> result = restTemplate.exchange(URL, HttpMethod.GET, entity, String.class);
 		    

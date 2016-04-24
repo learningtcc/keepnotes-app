@@ -5,7 +5,7 @@
 
 <!--
 		Load Spring Context 
-	 -->
+	 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
@@ -15,10 +15,10 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+	-->
 	<!--
 		Map the REST Servlet to /rest/ 
-	 -->
+	 
 	<servlet>
 		<servlet-name>RestService</servlet-name>
 		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
@@ -36,10 +36,11 @@
 		<servlet-name>RestService</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+	-->
 	
 	<!--
 		Apply Spring Security Filter to all Requests 
-	 -->
+	 
 	<filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -48,5 +49,5 @@
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
+    -->
 </web-app>
