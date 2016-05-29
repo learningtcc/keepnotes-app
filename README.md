@@ -11,3 +11,8 @@ $ mvn clean compile install jetty:run
 ```
 $ mvn clean compile install jetty:run
 ```
+## Development notes
+
+* JDK used: 1.7
+* Time of development: 45 hours
+* Reason of development: Testing Spring framework on Java 7
